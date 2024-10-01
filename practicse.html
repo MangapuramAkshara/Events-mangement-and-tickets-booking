@@ -1,0 +1,134 @@
+<html></html>
+    <!DOCTYPE html>
+
+<head> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticket Booking</title>
+    <link rel="stylesheet" href="style.css"> 
+</head>
+
+<body>
+     <div id="box">
+    <div class="container">
+      <center> <u><h1 style ="color:black">Ticket Booking Form</h1></u></center>
+        <form id="bookingForm">
+       <center> <label for="name">Name:</label>
+           <input type="text" id="name" name="name" required placeholder="enter name">
+        </center>
+<br>
+           <center> <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required placeholder="enter mail">
+        </center>
+
+       <center> <div class="container">
+           <u> <h1 style="color:black">Select an option</h1></u>
+            <label for="firstselect">Choose an event:</label>
+            <select id="firstselect" onchange="showSecondOptions()">
+              <option value="">--Select--</option>
+              <option value="conferences">Conferences</option>s
+              <option value="concerts">Concerts</option>
+              <option value="workshop">Workshop</option>
+            </select></center>
+          
+           <center><div id="selectsecondcontainer" class="hidden">
+              <label for="secondselect">Choose an option:</label>
+              <select id="secondselect"></center>
+                <option value="">--Select--</option>
+                <optgroup label="Conference" class="conference-options">
+                  <option value="suryansh">suryansh</option>
+                  <option value="Aman Gupta">Aman Gupta</option>
+                  <option value="Vineeta Singh">Vineeta Singh</option>
+                </optgroup>
+                <optgroup label="Concerts" class="concert-options">
+                  <option value="chamber_concerts">Chamber Concerts</option>
+                  <option value="children_concerts">Children Concerts</option>
+                </optgroup>
+                <optgroup label="Workshop" class="workshop-options">
+                  <option value="craft_class">Craft Class</option>
+                  <option value="pottery_class">Pottery Class</option>
+                  <option value="origami">Origami</option>
+                </optgroup>
+              </select>
+            </div>
+            </div>
+          </div>
+          
+          <script>
+            function showSecondOptions() {
+              var firstSelect = document.getElementById("firstselect").value;
+              var secondSelectContainer = document.getElementById("selectsecondcontainer");
+              var secondSelect = document.getElementById("secondselect");
+              
+              secondSelectContainer.classList.remove("hidden");
+          
+            
+              var allOptions = document.querySelectorAll("optgroup");
+              allOptions.forEach(function(group) {
+                group.style.display = "none";
+              });
+          
+              
+              if (firstSelect === "conferences") {
+                document.querySelector(".conference-options").style.display = "block";
+              } else if (firstSelect === "concerts") {
+                document.querySelector(".concert-options").style.display = "block";
+              } else if (firstSelect === "workshop") {
+                document.querySelector(".workshop-options").style.display = "block";
+              } else {
+                secondSelectContainer.classList.add("hidden");
+              }
+          
+    
+              secondSelect.value = "";
+            }
+          </script>
+          
+          <style>
+            body{
+                background-image:url("https://cdn.prod.website-files.com/6009ec8cda7f305645c9d91b/60107f9c58f4bb476b10caa8_6002086f72b72769e701e207_online-booking-system.jpeg");
+            }
+           
+            .hidden {
+              display: none;
+            }
+          </style>
+        <center> <label for="thirdselect">Timining:</label>
+          <select id="thirdselect" onchange="showSecondOptions()">
+            <option value="">--Select--</option> 
+            <option value="9.00AM-11.00AM">9.00AM-11.00AM</option>
+            <option value="1.00PM-3.00PM">1.00PM-3.00PM</option>
+            <option value="5.00PM-7.00PM">5.00PM-7.00PM</option> 
+            <br>
+            <br>
+           <label for="fourthselect">No of Tickets:</label>
+            <select id="fourthselect" onchange="showSecondOptions()">
+              <br>
+              <br>
+              <label for="No of Tickets">No of Tickets:</label>
+              <input type="text" id="name" name="name" required>
+               <br> 
+               <br>
+            <label for="fivethyselect">Phone number:</label>
+          <input id="fivethyselect" onchange="showSecondOptions()" required placeholder="enter phone number">
+            <br>
+            <br>
+             <label for="sixethyselect">OTP:</label>
+             <input id="sixethyselect" onchange="showSecondOptions()" placeholder="enter OTP">
+             <br>
+             <br>
+        <label for="seventhyselect">Payment Type:</label>
+        <select id="seventhyselect" onchange="showSecondOptions()">
+          <option value="">--Select--</option> 
+          <option value="UPI">UPI</option><a href="https://www.bhimupi.org.in/"></a>
+          <option value="CREDIT CARD">CREDIT CARD</option>
+          <option value="DEBIT CARD">DEBIT CARD</option>  </select>
+          <br>
+          <br>
+        <input type="submit"  value ="submit">
+        <br>
+        <br>
+        </center>
+    
+    </body>
+    </html>
